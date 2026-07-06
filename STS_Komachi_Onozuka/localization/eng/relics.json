@@ -1,0 +1,16 @@
+{
+  
+  "STS_KOMACHI_ONOZUKA-THE_TITANIC.description": "At the start of combat, add a [gold]Manipulate Distance[/gold] to your [gold]Hand[/gold]. Whenever an enemy dies, add a [gold]Spider Lily[/gold] to your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-THE_TITANIC.flavor": "Luxury Cruise across the Higan Shores!",
+  "STS_KOMACHI_ONOZUKA-THE_TITANIC.title": "The Titanic",
+
+  
+  "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.description": "At the start of combat, add a [gold]Manipulate Distance[/gold] to your [gold]Hand[/gold] and gain {Value1} [gold]Guided Spirits[/gold]. Whenever an enemy dies, add a [gold]Spider Lily[/gold] to your [gold]Hand[/gold], then gain {Gold} gold if it was not a minion.",
+  "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.flavor": "Limited time offer 10% off!",
+  "STS_KOMACHI_ONOZUKA-COMMERCIAL_TITANIC.title": "Commercial Titanic",
+
+  
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.description": "At the start of each combat, gain [blue]{DexterityPower}[/blue] [gold]Dexterity[/gold]. At the end of your second turn, lose [blue]{DexterityPower}[/blue] [gold]Dexterity[/gold] and apply [blue]{VulnerablePower}[/blue] [gold]Vulnerable[/gold] to ALL enemies.",
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.flavor": "",
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_EYES.title": "Shinigami Eyes"
+}

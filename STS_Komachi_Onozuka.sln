@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36127.28 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STS_Komachi_Onozuka", "STS_Komachi_Onozuka.csproj", "{9025F327-BBFE-47E2-946C-919EDB427421}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9025F327-BBFE-47E2-946C-919EDB427421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9025F327-BBFE-47E2-946C-919EDB427421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9025F327-BBFE-47E2-946C-919EDB427421}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{9025F327-BBFE-47E2-946C-919EDB427421}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{9025F327-BBFE-47E2-946C-919EDB427421}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{9025F327-BBFE-47E2-946C-919EDB427421}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B9D1F0F-31AE-488A-B9E3-0EC9B11D9392}
+	EndGlobalSection
+EndGlobal

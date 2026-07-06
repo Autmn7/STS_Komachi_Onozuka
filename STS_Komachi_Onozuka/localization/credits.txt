@@ -1,0 +1,15 @@
+Most art in this mod is from existing fan art of Komachi. This file contains the sources for all of them.
+
+Models:
+Combat model: Dairi
+Merchant model: https://x.com/hey36253625/status/1023102652274491397
+
+Strike: https://www.pixiv.net/en/artworks/5761472
+Defend: https://www.pixiv.net/en/artworks/21177490
+Shoot and Move: https://www.pixiv.net/en/artworks/20288141
+Handy Retreat: https://www.pixiv.net/en/artworks/43957526
+Scythe of Final Judgement: https://www.pixiv.net/en/artworks/102460697
+
+
+
+Anything not sourced here was made by me.
