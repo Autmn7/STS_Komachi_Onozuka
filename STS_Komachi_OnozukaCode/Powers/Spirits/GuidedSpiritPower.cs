@@ -10,7 +10,9 @@ using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +22,7 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
 {
-    public class GuidedSpiritPower : STS_Komachi_OnozukaPower
+    public class GuidedSpiritPower : STS_Komachi_OnozukaPower, IPreExtraHoverTips
     {
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
@@ -45,37 +47,29 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
                 return t;
             }
         }
+        public void PreExtraHoverTips()
+        {
+            Creature? target = AttackTarget;
+            decimal baseDmg = Amount;
+            decimal modifiedDmg = baseDmg;
 
+            if (Owner != null && Owner.CombatState != null && Owner.Player?.RunState != null && target != null)
+            {
+                modifiedDmg = Hook.ModifyDamage(
+                    Owner.Player.RunState, Owner.CombatState, target, Owner,
+                    baseDmg, ValueProp.Move, null, ModifyDamageHookType.All, CardPreviewMode.None, out _);
+            }
+
+            var damageVar = DynamicVars["GuidedDamage"];
+            damageVar.BaseValue = baseDmg;
+            damageVar.PreviewValue = modifiedDmg;
+        }
         protected override IEnumerable<IHoverTip> ExtraHoverTips
         {
-            get
+            get 
             {
-                decimal baseDmg = Amount;
-                decimal modifiedDmg = baseDmg;
-                // 1. Manually run the damage modifiers right before the UI draws
-                if (Owner != null && Owner.CombatState != null && Owner.Player.RunState != null && AttackTarget != null)
-                {
-                    modifiedDmg = Hook.ModifyDamage(
-                        Owner.Player.RunState,
-                        Owner.CombatState,
-                        AttackTarget,          
-                        Owner,      
-                        baseDmg,
-                        ValueProp.Move,
-                        null,
-                        ModifyDamageHookType.All,
-                        CardPreviewMode.None,
-                        out _
-                    );
-
-                    MainFile.Logger.LogMessage(MegaCrit.Sts2.Core.Logging.LogLevel.Info, $"Modifying {baseDmg} damage into {modifiedDmg}.", 0);
-                }
-
-                var damageVar = DynamicVars["GuidedDamage"];
-                damageVar.BaseValue = baseDmg;
-                damageVar.PreviewValue = modifiedDmg;
-
-                return base.ExtraHoverTips;
+                PreExtraHoverTips(); 
+                return base.ExtraHoverTips; 
             }
         }
 
@@ -85,6 +79,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
             {
                 return;
             }
+
 
             if (AttackTarget != null) {
                 // Change to attack later for animation and stuff

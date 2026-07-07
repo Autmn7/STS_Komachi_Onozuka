@@ -31,7 +31,7 @@
   
   "STS_KOMACHI_ONOZUKA-RELEASE_TOKEN.description": "{AltDescription:choose(0|1):Do not release.|{ExtraDescription1}|{ExtraDescription2}}",
   "STS_KOMACHI_ONOZUKA-RELEASE_TOKEN.title": "Release",
-  "STS_KOMACHI_ONOZUKA-RELEASE_TOKEN.artist": "None",
+  "STS_KOMACHI_ONOZUKA-RELEASE_TOKEN.artist": "iromi (a1vlmeta)",
 
   
   "STS_KOMACHI_ONOZUKA-SHOOT_AND_MOVE.description": "Deal {Damage:diff()} damage.\n[gold]Optional[/gold]: [gold]Displace[/gold] by up to +/-{Value1:diff()}.",
@@ -45,7 +45,7 @@
 
   
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_FINAL_JUDGEMENT.description": "[gold]Optional[/gold]: [gold]Displace[/gold] to any [gold]Distance[/gold].\nDeal {Damage:diff()} damage.\nDamage reduction of far [gold]Distances[/gold] increases this card's damage by double the amount instead.",
-  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_FINAL_JUDGEMENT.title": "Scythe Of Final Judgement",
+  "STS_KOMACHI_ONOZUKA-SCYTHE_OF_FINAL_JUDGEMENT.title": "Death Sign \"Scythe Of Final Judgement\"",
   "STS_KOMACHI_ONOZUKA-SCYTHE_OF_FINAL_JUDGEMENT.artist": "clio_desu",
   
   "STS_KOMACHI_ONOZUKA-HANDY_RETREAT.description": "[gold]Optional[/gold]: [gold]Displace[/gold] by up to +{Value1:diff()}.\nGain {Block:diff()} [gold]Block[/gold].\nIf target's [gold]Distance[/gold] is 5, add a Manipulate [gold]Distance[/gold] to the hand.",
@@ -391,7 +391,7 @@
   
   "STS_KOMACHI_ONOZUKA-RECURSIVE_SOULS.description": "Whenever a card is [gold]Exhausted[/gold], gain {Value1:diff()} [gold]Guided Spirit{Value1:plural:|s}[/gold]",
   "STS_KOMACHI_ONOZUKA-RECURSIVE_SOULS.title": "Recursive Souls",
-  "STS_KOMACHI_ONOZUKA-RECURSIVE_SOULS.artist": "None",
+  "STS_KOMACHI_ONOZUKA-RECURSIVE_SOULS.artist": "non (nobu)",
 
   
   "STS_KOMACHI_ONOZUKA-RIVERSIDE_VIEW.description": "{IfUpgraded:show:Add a [gold]Spider Lily[/gold] to the [gold]Hand[/gold]\n|}At the start of your turn, if you have no [gold]Spider Lily[/gold] in your [gold]Hand[/gold], add one. \n[gold]Spider Lilies[/gold] only give you one [gold]Poison[/gold].",
@@ -430,7 +430,7 @@
   
   "STS_KOMACHI_ONOZUKA-TIP_OF_THE_REAPER.description": "Deal {Damage:diff()} damage.\nWhen [gold]Exhausted[/gold]: Add a [gold]Manipulate Distance[/gold] to the [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-TIP_OF_THE_REAPER.title": "Tip Of The Reaper",
-  "STS_KOMACHI_ONOZUKA-TIP_OF_THE_REAPER.artist": "None",
+  "STS_KOMACHI_ONOZUKA-TIP_OF_THE_REAPER.artist": "ebizome",
 
   
   "STS_KOMACHI_ONOZUKA-GHOSTRICK_SHOT.description": "Deal {Damage:diff()} damage. Apply {Value1:diff()} [gold]Vengeful Spirits[/gold].\nWhen [gold]Exhausted[/gold]: Apply {Value2:diff()} [gold]Vengeful Spirits[/gold] to ALL enemies.",

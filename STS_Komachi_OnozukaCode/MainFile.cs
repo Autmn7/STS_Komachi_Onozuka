@@ -1,5 +1,6 @@
 using Godot;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode
@@ -20,6 +21,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode
             Harmony harmony = new(ModId);
 
             harmony.PatchAll();
+
+            foreach (var method in Harmony.GetAllPatchedMethods())
+            {
+                MainFile.Logger.LogMessage(LogLevel.Info, $"[PatchCheck] Patched: {method.DeclaringType?.Name}.{method.Name}", 0);
+            }
         }
 
         public static void LogMessage(string message)

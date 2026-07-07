@@ -1,18 +1,23 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
+using Godot;
+using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Badges;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +26,12 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
 {
-    public class VengefulSpiritPower : STS_Komachi_OnozukaPower, IHasSecondAmount
+    public class VengefulSpiritPower : STS_Komachi_OnozukaPower, IHasSecondAmount, IHasEmphasizedSecondAmount, IPreExtraHoverTips
     {
         public override PowerType Type => PowerType.Debuff;
         public override PowerStackType StackType => PowerStackType.Counter;
         public override PowerInstanceType InstanceType => PowerInstanceType.InstancedPerApplier;
+        public override Color AmountLabelColor => StsColors.purple;
         protected override IEnumerable<DynamicVar> CanonicalVars =>
         [
             new IntVar(nameof(Duration), 3),
@@ -72,15 +78,18 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
             }
         }
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips
-        {
-            get
-            {
-                // Accessing the property automatically refreshes its values inside DynamicVars
-                _ = VengefulDamage;
-                return base.ExtraHoverTips;
-            }
-        }
+        public void PreExtraHoverTips() => _ = VengefulDamage;
+
+        // No longer needed due to p
+        //protected override IEnumerable<IHoverTip> ExtraHoverTips
+        //{
+        //    get
+        //    {
+        //        // Accessing the property automatically refreshes its values inside DynamicVars
+        //        _ = VengefulDamage;
+        //        return base.ExtraHoverTips;
+        //    }
+        //}
 
         public int Duration
         {
@@ -89,10 +98,13 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
             {
                 DynamicVars[nameof(Duration)].BaseValue = value;
                 PowerExtensions.InvokeSecondAmountChanged(this);
+                if (value == 1) Flash();
             }
-        }
 
+        }
         public string GetSecondAmount() => Duration.ToString();
+        public Color SecondAmountColor => StsColors.blue;
+        public bool ShouldEmphasizeSecondAmount => Duration == 1;
 
         public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
         {
@@ -128,6 +140,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
                 currentDetonationArgs.damageResult = dmgResult;
             }
             await base.AfterRemoved(oldOwner);
+        }
+
+        public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        {
+            return base.AfterPowerAmountChanged(choiceContext, power, amount, applier, cardSource);
         }
     }
 }
