@@ -14,6 +14,15 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions
             return Path.Join(MainFile.ResPath, "images", path);
         }
 
+        public static string BulletImagePath(this string path)
+        {
+            path = Path.Join(MainFile.ResPath, "images", "bullets", path);
+            if (ResourceLoader.Exists(path)) return path;
+
+            MainFile.Logger.Info("Could not find bullet image path: " + path);
+            return Path.Join(MainFile.ResPath, "images", "bullets", "knife.png");
+        }
+
         public static string CardImagePath(this string path)
         {
             path = Path.Join(MainFile.ResPath, "images", "card_portraits", path);

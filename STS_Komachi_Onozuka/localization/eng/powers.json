@@ -53,7 +53,7 @@
   "STS_KOMACHI_ONOZUKA-DIVINE_SPIRIT_POWER.title": "Divine Spirit",
 
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.description": "[font_size=18]Whenever [gold]Vengeful Spirits[/gold] are applied, [gold]Lonely Bound Spirit[/gold]'s amount will increase by the same amount.\nCan only be [gold]Detonated[/gold] by a card, dealing attack damage (affected by modifiers) equal to double its amount from the applying player to the target.\nWhen detonated at the same time as [gold]Vengeful Spirits[/gold], effects that count the amount of [gold]Spirits Detonated[/gold] will count both [gold]Detonations[/gold].",
-  "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.smartDescription": "[gold]Whenever [gold]Vengeful Spirits[/gold] are applied, [gold]Lonely Bound Spirit[/gold]'s amount will increase by the same amount.\nWhen [gold]Detonated[/gold], Player {ApplierName} will attack {OwnerName} for [blue]{VengefulDamage}[/blue] damage.",
+  "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.smartDescription": "Whenever [gold]Vengeful Spirits[/gold] are applied, [gold]Lonely Bound Spirit[/gold]'s amount will increase by the same amount.\nDeals attack damage equal to double its amount.\nWhen [gold]Detonated[/gold], Player {ApplierName} will attack {OwnerName} for [blue]{VengefulDamage}[/blue] damage.",
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.title": "Lonely Bound Spirit",
 
 
@@ -124,7 +124,7 @@
 
 
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM_POWER.smartDescription": "Amplifies Distance bonuses.\nClose: (1) Enemies take [blue]+{L1Mult}%[/blue] damage. (2) Enemies take [blue]+{L2Mult}%[/blue] damage.\nFar: (4) Enemies deal [blue]{L4Mult}%[/blue] damage. (5) Enemies deal [blue]{L5Mult}%[/blue] damage.",
+  "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM_POWER.smartDescription": "Amplifies Distance bonuses.\nClose: (1) Enemies take [blue]+{L1Mult}%[/blue] damage.\n(2) Enemies take [blue]+{L2Mult}%[/blue] damage.\nFar:(4) Enemies deal [blue]{L4Mult}%[/blue] damage.\n(5) Enemies deal [blue]{L5Mult}%[/blue] damage.",
   "STS_KOMACHI_ONOZUKA-SHINIGAMI_FORM_POWER.title": "Shinigami Form",
 
 
@@ -137,6 +137,11 @@
   "STS_KOMACHI_ONOZUKA-EIKI_FREE_RELEASE_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-EIKI_FREE_RELEASE_POWER.smartDescription": "You do not pay the [gold]Release[/gold] cost of cards.",
   "STS_KOMACHI_ONOZUKA-EIKI_FREE_RELEASE_POWER.title": "Lectured Shinigami",
+
+  
+  "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.description": "Increases damage and poison application of your Lycoris Radiata.",
+  "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.smartDescription": "Your [gold]Lycoris Radiata[/gold] deals [blue]{Amount}[/blue] more damage and applies [green]{PoisonAmount}[/green] more [gold]Poison[/gold].",
+  "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.title": "Lycoris Radiata",
 
   "STS_KOMACHI_ONOZUKA-SPIRIT_RETURN_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-SPIRIT_RETURN_POWER.smartDescription": "At the start of your turn, add up to [blue]{Amount}[/blue] card{Amount:plural:|s} from the [gold]Exhaust[/gold] pile with an energy cost of [blue]1[/blue] or less to your [gold]Hand[/gold]. It is removed from combat when played.",

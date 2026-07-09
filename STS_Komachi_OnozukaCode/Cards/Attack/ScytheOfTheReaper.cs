@@ -20,7 +20,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Basics
     {
         public ScytheOfTheReaper() : base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
         {
-            WithDamage(5, 2);
+            WithDamage(4, 2);
             WithKeyword(KomachiKeywords.Displace);
             WithTip(typeof(DistancePower));
         }

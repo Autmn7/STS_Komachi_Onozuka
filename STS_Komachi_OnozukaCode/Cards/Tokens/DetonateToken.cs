@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -6,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Cards;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
@@ -18,6 +20,7 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens
 {
+    [Pool(typeof(TokenCardPool))]
     public class DetonateToken : STS_Komachi_OnozukaCard
     {
         public override bool CanBeGeneratedInCombat => false;

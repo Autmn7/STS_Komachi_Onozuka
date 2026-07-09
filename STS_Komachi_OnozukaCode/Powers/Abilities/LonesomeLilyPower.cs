@@ -41,7 +41,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
 
             for (int i = 0; i < Amount; i++)
             {
-                var card = CombatState.CreateCard<Maul>(Owner.Player);
+                var card = CombatState.CreateCard<LycorisRadiata>(Owner.Player);
                 cardsToBeAdded.Add(card);
             }
 

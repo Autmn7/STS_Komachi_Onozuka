@@ -22,7 +22,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
     {
         public DivineProtection() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
         {
-            WithBlock(8, 2);
+            WithBlock(8);
             WithPower<DivineSpiritPower>(nameof(Value1), 4, 2);
             // release cost
             WithVar(nameof(ReleaseCost), 4);

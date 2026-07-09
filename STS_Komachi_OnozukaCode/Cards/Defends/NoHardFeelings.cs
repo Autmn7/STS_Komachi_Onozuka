@@ -26,7 +26,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
     {
         public NoHardFeelings() : base(1, CardType.Skill, CardRarity.Common, TargetType.AnyEnemy)
         {
-            WithBlock(5);
+            WithBlock(4);
             WithPower<VengefulSpiritPower>(nameof(Value1), 2, 2);
             // Strength down per value spirits
             WithVar(new IntVar(nameof(Value2), 2));

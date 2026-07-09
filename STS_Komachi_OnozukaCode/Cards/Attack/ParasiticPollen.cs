@@ -24,7 +24,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         public ParasiticPollen()
         : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
         {
-            WithDamage(4);
+            WithDamage(4, -1);
             // Attack times
             WithVar(nameof(Value1), 2, 1);
             WithPower<PoisonPower>(nameof(Value2), 3);

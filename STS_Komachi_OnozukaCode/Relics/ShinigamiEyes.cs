@@ -48,7 +48,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
             if (!participants.Contains(Owner.Creature) || Owner.PlayerCombatState.TurnNumber != 3)
                 return;
             await PowerCmd.Apply<DexterityPower>(choiceContext, Owner.Creature, -DynamicVars["DexterityPower"].BaseValue, Owner.Creature, null);
-            await PowerCmd.Apply<VulnerablePower>(choiceContext, Owner.Creature.CombatState.HittableEnemies, -DynamicVars["VulnerablePower"].BaseValue, Owner.Creature, null);
+            await PowerCmd.Apply<VulnerablePower>(choiceContext, Owner.Creature.CombatState.HittableEnemies, DynamicVars["VulnerablePower"].BaseValue, Owner.Creature, null);
             
         }
     }

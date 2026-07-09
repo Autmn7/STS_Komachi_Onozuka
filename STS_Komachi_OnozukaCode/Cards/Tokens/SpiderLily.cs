@@ -30,7 +30,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens
             WithKeywords(CardKeyword.Retain, CardKeyword.Exhaust, KomachiKeywords.Replenish);
             WithPower<SpiderLilyPower>(nameof(Value1), 1, 2);
             // Make sure to sync with Riverside View
-            WithPower<PoisonPower>(nameof(Value2), 3);
+            WithPower<PoisonPower>(nameof(Value2), 2);
             WithEnergy(1, 1);
         }
 

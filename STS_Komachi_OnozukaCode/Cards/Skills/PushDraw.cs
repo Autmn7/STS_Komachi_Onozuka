@@ -1,5 +1,6 @@
 ﻿using BaseLib.Extensions;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -48,6 +49,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
 
 
             await CardPileCmd.Draw(choiceContext, enemyDisplacement, Owner);
+
+            CardModel cardModel = (await CardSelectCmd.FromHandForDiscard(choiceContext, base.Owner, new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, 1), null, this)).FirstOrDefault();
+            if (cardModel != null)
+            {
+                await CardCmd.Discard(choiceContext, cardModel);
+            }
         }
     }
 }

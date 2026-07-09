@@ -28,7 +28,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         public ScytheParry()
             : base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
         {
-            WithBlock(9, 3);
+            WithBlock(8, 3);
             WithPower<ReflectPower>(nameof(Value1), 1);
             WithTip(typeof(ManipulateDistanceToken));
             WithKeyword(CardKeyword.Exhaust);

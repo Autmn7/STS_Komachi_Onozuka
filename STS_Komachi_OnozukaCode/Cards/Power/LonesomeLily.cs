@@ -32,7 +32,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             WithTip(typeof(SpiderLily));
             // Maybe replace it with another custom card later
-            WithTip(typeof(Maul));
+            WithTip(typeof(LycorisRadiata));
             // Spider Lilies Added
             WithVar(nameof(Value1), 1, 1);
         }

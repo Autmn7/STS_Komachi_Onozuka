@@ -1,7 +1,12 @@
 using Godot;
 using HarmonyLib;
+using MegaCrit.Sts2.addons.mega_text;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Combat;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches;
+using System.Reflection;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode
 {
@@ -19,12 +24,19 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode
             //Godot.Bridge.ScriptManagerBridge.LookupScriptsInAssembly(Assembly.GetExecutingAssembly());
 
             Harmony harmony = new(ModId);
-
+            // Harmony.DEBUG = true;
             harmony.PatchAll();
-
-            foreach (var method in Harmony.GetAllPatchedMethods())
+            Log.Info("[KomachiMod] Harmony PatchAll completed");
+            try
             {
-                MainFile.Logger.LogMessage(LogLevel.Info, $"[PatchCheck] Patched: {method.DeclaringType?.Name}.{method.Name}", 0);
+                // For some reason this patch in specific does not patch unless i do this.
+                var patched = harmony.CreateClassProcessor(typeof(NPower_SecondAmountStyling_Patch)).Patch();
+                foreach (var m in patched)
+                    MainFile.LogMessage($"[PatchCheck] Actually patched: {m.DeclaringType}.{m.Name}");
+            }
+            catch (Exception ex)
+            {
+                MainFile.LogMessage($"[PatchCheck] EXCEPTION: {ex}");
             }
         }
 

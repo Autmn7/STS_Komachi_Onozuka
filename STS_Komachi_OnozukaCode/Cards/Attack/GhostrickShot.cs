@@ -35,9 +35,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             // Honestly just a triangle anti tech
             WithDamage(2);
             // Single target apply
-            WithPower<VengefulSpiritPower>(nameof(Value1), 7, 2);
+            WithPower<VengefulSpiritPower>(nameof(Value1), 6, 2);
             // On exhaust aoe apply
-            WithPower<VengefulSpiritPower>(nameof(Value2), 3, 2);
+            WithPower<VengefulSpiritPower>(nameof(Value2), 2, 1);
 
             WithKeyword(CardKeyword.Ethereal);
         }

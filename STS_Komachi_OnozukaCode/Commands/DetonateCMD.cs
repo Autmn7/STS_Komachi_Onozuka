@@ -118,7 +118,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
 
             await KomachiHooks.OnDetonating(choiceContext, args);
 
-            if (!args.Target.HasPower<VengefulSpiritPower>())
+            if (!args.Target.Powers.Contains(power))
             {
                 args.Succcessful = false;
                 return args;

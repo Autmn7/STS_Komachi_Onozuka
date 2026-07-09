@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
@@ -30,19 +31,32 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             WithBlock(7, 3);
             WithPower<DistancePower>(nameof(Value1), 2);
             WithKeyword(KomachiKeywords.Displace);
+            // Applied tainted per release
+            WithPower<TaintedPower>(nameof(Value2), 3);
+            WithVar(nameof(ReleaseCost), 3);
+            // Release cost 2
+            WithVar(nameof(Value3), 6);
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-            // Displacement happens before block for certain powers that care about it.
+            CardModel? chosen = await ReleaseCmd.ChooseRelease(choiceContext, this, ReleaseCost, Value3);
 
             await CreatureCmd.LoseBlock(cardPlay.Target, cardPlay.Target.Block);
 
+            // Displacement happens before block for certain powers that care about it.
             await DistanceCmd.Displace(choiceContext, cardPlay.Target, Value1, Owner.Creature, this);
 
             await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
-            
+
+            if (ReleaseCmd.ChoseRelease(chosen, ReleaseCost, Value3, out var cost))
+            {
+                await ReleaseCmd.Release(choiceContext, Owner.Creature, cost, this);
+
+                await PowerCmd.Apply<TaintedPower>(choiceContext, cardPlay.Target, 
+                    cost / ReleaseCost, Owner.Creature, this);
+            }
         }
     }
 }

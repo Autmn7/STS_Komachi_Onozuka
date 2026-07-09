@@ -189,8 +189,6 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         /// absolute Distance level, when THIS card is the one dealing the hit.
         /// </summary>
         public virtual decimal? GetDistanceMultiplierOverride(int distanceLevel) => null;
-
-
         //Image size:
         //Normal art: 1000x760 (Using 500x380 should also work, it will simply be scaled.)
         //Full art: 606x852

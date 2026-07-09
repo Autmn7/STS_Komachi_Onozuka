@@ -31,7 +31,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
         {
             // Summon amount
-            WithVar(nameof(Value1), 30, 10);
+            WithVar(nameof(Value1), 25, 10);
             // Strength amount
             WithPower<StrengthPower>(nameof(Value2), 2, 1);
             WithHeal(5, 5);
