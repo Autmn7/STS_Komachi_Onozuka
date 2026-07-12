@@ -79,7 +79,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Character
         /// Merchant model
         /// </summary>
         public override string CustomMerchantAnimPath => "merchant/merchant_komachi.tscn".ScenePath();
-        
+
+        public override string CustomRestSiteAnimPath => "rest/rest_site_komachi.tscn".ScenePath();
+        public override string CustomEnergyCounterPath => "energy/energy_counter_komachi.tscn".ScenePath();
+
         //public override NCreatureVisuals CreateCustomVisuals()
         //{
         //    BaseLib.Utils.CustomAnimation

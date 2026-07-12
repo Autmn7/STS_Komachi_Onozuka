@@ -26,7 +26,7 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
 { 
-    public class SpiderLilyPower : TemporaryStrengthPower
+    public class SpiderLilyPower : TemporaryStrengthPower, ICustomPower
     {
         public override AbstractModel OriginModel => ModelDb.Card<SpiderLily>();
         protected override bool IsPositive => true;

@@ -14,12 +14,26 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
 {
-    public class ReleaseResult
+    public class ReleaseArgs
     {
+        /// <summary>
+        /// Original amount of spirits to be release, in case they get changed by Eiki
+        /// </summary>
+        public int originalReleaseAmount;
         /// <summary>
         /// Amount of spirits to be release
         /// </summary>
         public int ReleaseAmount;
+
+
+        /// <summary>
+        /// The virtual amount of Guided Spirits that would be released (ignores Eiki's free release)
+        /// </summary>
+        public int IntendedGuidedReleaseAmount;
+        /// <summary>
+        /// The virtual amount of Divine Spirits that would be released (ignores Eiki's free release)
+        /// </summary>
+        public int IntendedDivineReleaseAmount;
         /// <summary>
         /// How many Guided spirits were released by this command
         /// </summary>
@@ -44,7 +58,12 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
 
     public interface IOnReleasingListener
     {
-        Task OnReleasing(PlayerChoiceContext choiceContext, ReleaseResult args);
+        Task OnReleasing(PlayerChoiceContext choiceContext, ReleaseArgs args);
+    }
+
+    public interface IOnReleasedListener
+    {
+        Task OnReleased(PlayerChoiceContext choiceContext, ReleaseArgs args);
     }
 
     public static class ReleaseCmd
@@ -54,19 +73,26 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
         /// for whatever remains. Caller should gate this behind CanReleaseSpirits beforehand
         /// (ChooseRelease already does).
         /// </summary>
-        public static async Task<ReleaseResult> Release(PlayerChoiceContext choiceContext, Creature unit, int amount, CardModel? cardSource = null)
+        public static async Task<ReleaseArgs> Release(PlayerChoiceContext choiceContext, Creature unit, int amount, CardModel? cardSource = null)
         {
-            ReleaseResult result = new ReleaseResult { ReleaseAmount = amount, creature = unit };
+            ReleaseArgs args = new() { originalReleaseAmount = amount, ReleaseAmount = amount, creature = unit };
 
-            await KomachiHooks.OnReleasing(choiceContext, result);
+            // Calculate Intended amounts BEFORE hooks modify the release behavior.
+            int currentGuided = unit.GetPower<GuidedSpiritPower>()?.Amount ?? 0;
+            int currentDivine = unit.GetPower<DivineSpiritPower>()?.Amount ?? 0;
+
+            args.IntendedGuidedReleaseAmount = Math.Min(currentGuided, amount);
+            args.IntendedDivineReleaseAmount = Math.Min(currentDivine, amount - args.IntendedGuidedReleaseAmount);
+
+            await KomachiHooks.OnReleasing(choiceContext, args);
 
             if (!CanReleaseSpirits(unit, amount))
             {
-                return result;
+                return args;
             }
 
-            result.Successful = true;
-            int remaining = amount;
+            args.Successful = true;
+            int remaining = args.ReleaseAmount;
 
             GuidedSpiritPower? guidedSpirits = unit.GetPower<GuidedSpiritPower>();
             if (guidedSpirits != null && guidedSpirits.Amount > 0)
@@ -74,7 +100,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
                 int guidedToRelease = Math.Min(guidedSpirits.Amount, remaining);
                 await PowerCmd.ModifyAmount(choiceContext, guidedSpirits, -guidedToRelease, unit, cardSource);
                 remaining -= guidedToRelease;
-                result.GuidedSpiritReleaseAmount = guidedToRelease;
+                args.GuidedSpiritReleaseAmount = guidedToRelease;
             }
 
             DivineSpiritPower? divineSpirits = unit.GetPower<DivineSpiritPower>();
@@ -82,11 +108,13 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
             {
                 int divineToRelease = Math.Min(divineSpirits.Amount, remaining);
                 await PowerCmd.ModifyAmount(choiceContext, divineSpirits, -divineToRelease, unit, cardSource);
-                result.DivineSpiritReleaseAmount = divineToRelease;
+                args.DivineSpiritReleaseAmount = divineToRelease;
             }
 
-            result.RemovedCompletely = result.GuidedSpiritReleaseAmount == amount || result.DivineSpiritReleaseAmount == amount;
-            return result;
+            await KomachiHooks.OnReleased(choiceContext, args);
+
+            args.RemovedCompletely = args.GuidedSpiritReleaseAmount == amount || args.DivineSpiritReleaseAmount == amount;
+            return args;
         }
 
         public static bool CanReleaseSpirits(Creature unit, int requiredAmount)

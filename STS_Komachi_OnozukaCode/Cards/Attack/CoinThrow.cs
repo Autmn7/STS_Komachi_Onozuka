@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -14,7 +15,9 @@ using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extras;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Distance;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
@@ -40,6 +43,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             if (CombatState == null) return;
 
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(base.CombatState)
+            .WithDanmaku(patterns)
             .WithHitFx("vfx/vfx_attack_blunt", null, "heavy_attack.mp3")
             .Execute(choiceContext);
 
@@ -58,7 +62,23 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             WithTip(CardKeyword.Exhaust);
             WithTip(CardKeyword.Ethereal);
-
         }
+
+        public override List<DanmakuPiece> patterns =>
+            [
+                new DanmakuPiece
+                {
+                    SpritePath = "coin.png".BulletImagePath(),
+                    Group = 40,
+                    GIntervalSeconds = 0.01f,
+                    WayCount = new GrowthValue {Base = 1},
+                    GAngle = new GrowthValue(20, -10f),
+                    StartSpeed = 14f,
+                    Scale = 0.5f,
+                    X = 0,
+                    LifeSeconds = 3f,
+                    BulletColor = StsColors.gold,
+                }
+            ];
     }
 }

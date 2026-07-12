@@ -29,7 +29,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Single;
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromKeyword(KomachiKeywords.Release)];
-        public async Task OnReleasing(PlayerChoiceContext choiceContext, ReleaseResult args)
+        public async Task OnReleasing(PlayerChoiceContext choiceContext, ReleaseArgs args)
         {
             if (args.creature != Owner) return;
             args.ReleaseAmount = 0;

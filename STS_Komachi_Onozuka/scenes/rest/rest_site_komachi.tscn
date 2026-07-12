@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkft7e41sjfud"]
+
+[ext_resource type="Texture2D" uid="uid://dqkjb6bxdlqh0" path="res://STS_Komachi_Onozuka/scenes/rest/komachi_restsite.png" id="1_d5sew"]
+
+[node name="CampfireKeine" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-30, -70)
+scale = Vector2(5, 5)
+texture = ExtResource("1_d5sew")
+flip_h = true
+
+[node name="ControlRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="SelectionReticle" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -202.0
+offset_top = -259.0
+offset_right = 218.0
+offset_bottom = 292.0
+
+[node name="Hitbox" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -155.0
+offset_top = -165.0
+offset_right = 154.0
+offset_bottom = 166.0
+
+[node name="ThoughtBubbleRight" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 121.0
+offset_top = -125.0
+offset_right = 121.0
+offset_bottom = -125.0
+
+[node name="ThoughtBubbleLeft" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -113.0
+offset_top = -95.0
+offset_right = -113.0
+offset_bottom = -95.0

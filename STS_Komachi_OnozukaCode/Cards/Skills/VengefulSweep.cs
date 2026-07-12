@@ -30,7 +30,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             // Spirits applied
             WithPower<VengefulSpiritPower>(nameof(Value1), 5, 2);
             // Release cost
-            WithVar(nameof(ReleaseCost), 5);
+            WithVar(nameof(ReleaseCost), 4);
             WithKeyword(KomachiKeywords.Release);
         }
 

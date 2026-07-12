@@ -14,7 +14,7 @@
   "STS_KOMACHI_ONOZUKA-HARDWORKING_SHINIGAMI_POWER.smartDescription": "At the start of your turn, if there {Amount:plural:is no|are less than [blue]{Amount}[/blue]} [gold]Manipulate Distances[/gold] in [gold]Hand[/gold], add {Amount:plural:a [gold]Manipulate Distance[/gold]|[gold]Manipulate Distances[/gold]} into your [gold]Hand[/gold]{Amount:plural:.| until there are [blue]{Amount}[/blue].}",
 
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER_POWER.smartDescription": "Whenever an enemy is [gold]Displaced[/gold]:\nIf the [gold]Distance[/gold] increased, gain {Value1:diff()} [gold]Dexterity[/gold] this turn.\nIf the [gold]Distance[/gold] decreased, gain {Value1:diff()} [gold]Strength[/gold] this turn.",
+  "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER_POWER.smartDescription": "Whenever an enemy is [gold]Displaced[/gold]:\nIf the [gold]Distance[/gold] increased, gain {Amount} [gold]Dexterity[/gold] this turn.\nIf the [gold]Distance[/gold] decreased, gain {Amount} [gold]Strength[/gold] this turn.",
   "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER_POWER.title": "Flow Of The Sanzu River",
 
   "STS_KOMACHI_ONOZUKA-PUSH_N_PULL_POWER.description": "",
@@ -36,7 +36,7 @@
 
   "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.smartDescription": "Whenever {OwnerName} is [gold]Displaced[/gold], Player {ApplierName} [gold]Summons[/gold] [blue]{Amount}[/blue].",
-  "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.title": "AccompanyingSpySpiritPower",
+  "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.title": "Accompanying Spy Spirit",
 
 
   "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POWER.description": "[font_size=18]Removed at the start of the third turn after being applied. [gold]Detonates[/gold] when removed, dealing attack damage (affected by modifiers) equal to double the [gold]Vengeful Spirits[/gold] from the applying player to the target.",
@@ -142,6 +142,19 @@
   "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.description": "Increases damage and poison application of your Lycoris Radiata.",
   "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.smartDescription": "Your [gold]Lycoris Radiata[/gold] deals [blue]{Amount}[/blue] more damage and applies [green]{PoisonAmount}[/green] more [gold]Poison[/gold].",
   "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.title": "Lycoris Radiata",
+
+  
+  "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION_POWER.description": "",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION_POWER.smartDescription": "Whenever you would [gold]Release[/gold]:\n- Deal {Amount} damage to ALL enemies for every [gold]Guided Spirit[/gold] you would [gold]Release[/gold].\n- [gold]Summon[/gold] and gain {Amount} [gold]Block[/gold] for every [gold]Divine Spirit[/gold] you would [gold]Release[/gold].",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION_POWER.title": "Spirit Invitation",
+  
+  "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING_POWER.description": "",
+  "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING_POWER.smartDescription": "At the start of your turn, add a [gold]Spider Lily[/gold] to your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING_POWER.title": "Flower Viewing",
+  
+  "STS_KOMACHI_ONOZUKA-LILY_EMBRACE_POWER.description": "",
+  "STS_KOMACHI_ONOZUKA-LILY_EMBRACE_POWER.smartDescription": "Whenever you play a [gold]Spider Lily[/gold], gain [blue]{Amount}[/blue] [gold]Strength[/gold] and apply [green]{PoisonAmount}[/green] [gold]Poison[/gold] to ALL enemies.",
+  "STS_KOMACHI_ONOZUKA-LILY_EMBRACE_POWER.title": "Lily's Embrace",
 
   "STS_KOMACHI_ONOZUKA-SPIRIT_RETURN_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-SPIRIT_RETURN_POWER.smartDescription": "At the start of your turn, add up to [blue]{Amount}[/blue] card{Amount:plural:|s} from the [gold]Exhaust[/gold] pile with an energy cost of [blue]1[/blue] or less to your [gold]Hand[/gold]. It is removed from combat when played.",

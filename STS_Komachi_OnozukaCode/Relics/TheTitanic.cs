@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.Models.Relics;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using System;
@@ -29,25 +30,37 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
 
         public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
         {
-            if (player != Owner || Owner.PlayerCombatState.TurnNumber != 1)
+            if (player != Owner)
                 return;
-            CardModel created = Owner.Creature.CombatState.CreateCard<ManipulateDistanceToken>(Owner);
-            await CardPileCmd.Add(created, PileType.Hand);
-        }
-
-        public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
-        {
-            if (creature.Side != base.Owner.Creature.Side)
+            if (player.PlayerCombatState?.TurnNumber == 1)
+            {
+                CardModel created = combatState.CreateCard<ManipulateDistanceToken>(Owner);
+                await CardPileCmd.Add(created, PileType.Hand);
+            }
+            else if (player.PlayerCombatState?.TurnNumber == 3)
             {
                 Flash();
-                CardModel created = Owner.Creature.CombatState.CreateCard<SpiderLily>(Owner);
+                CardModel created = combatState.CreateCard<SpiderLily>(Owner);
                 await CardPileCmd.Add(created, PileType.Hand);
             }
         }
 
+        // Old effect of adding on enemy death.
+        //public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
+        //{
+        //    if (creature.Side != base.Owner.Creature.Side)
+        //    {
+        //        Flash();
+        //        CardModel created = Owner.Creature.CombatState.CreateCard<SpiderLily>(Owner);
+        //        await CardPileCmd.Add(created, PileType.Hand);
+        //    }
+        //}
+
         public override RelicModel? GetUpgradeReplacement()
         {
-            return ModelDb.Relic<CommercialTitanic>();
+            if (!IsMutable) return ModelDb.Relic<CommercialTitanic>();
+            RelicModel[] list = [ModelDb.Relic<CommercialTitanic>(), ModelDb.Relic<RedTitanic>()];
+            return Owner.RunState.Rng.Niche.NextItem(list);
         }
     }
 }

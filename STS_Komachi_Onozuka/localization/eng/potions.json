@@ -1,0 +1,22 @@
+{
+  "STS_KOMACHI_ONOZUKA-GUIDED_SPIRIT_POTION.description": "Gain {GuidedSpiritPower} [gold]Guided Spirits[/gold].",
+  "STS_KOMACHI_ONOZUKA-GUIDED_SPIRIT_POTION.title": "Pot of Spirits",
+
+  "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POTION.description": "Apply {VengefulSpiritPower} [gold]Vengeful Spirits[/gold].",
+  "STS_KOMACHI_ONOZUKA-VENGEFUL_SPIRIT_POTION.title": "Pot of Grudges",
+
+  
+  "STS_KOMACHI_ONOZUKA-DIVINE_SPIRIT_POTION.description": "Gain {DivineSpiritPower} [gold]Divine Spirits[/gold].",
+  "STS_KOMACHI_ONOZUKA-DIVINE_SPIRIT_POTION.title": "Divine Pot",
+
+  
+  "STS_KOMACHI_ONOZUKA-SPIDER_LILY_POTION.description": "Add {Cards} [gold]Spider Lilies[/gold] to your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-SPIDER_LILY_POTION.title": "Lily in a Bottle",
+
+  
+  "STS_KOMACHI_ONOZUKA-LILY_WHITE_POTION.description": "Heal for {Heal}% of your Max HP. Gain {Energy:energyIcons()}.",
+  "STS_KOMACHI_ONOZUKA-LILY_WHITE_POTION.title": "LILY in a Bottle",
+
+  "STS_KOMACHI_ONOZUKA-DISPLACEMENT_POTION.description": "Add {Cards} [gold]Manipulate Distances[/gold] into your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-DISPLACEMENT_POTION.title": "Displacement Potion"
+}

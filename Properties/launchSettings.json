@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "STS_Komachi_Onozuka": {
+      "commandName": "Project"
+    },
+    "STS 2 Hot Reloader": {
+      "commandName": "Executable",
+      "executablePath": "G:\\SteamLibrary\\steamapps\\common\\Slay the Spire 2\\SlayTheSpire2.exe",
+      "workingDirectory": "G:\\SteamLibrary\\steamapps\\common\\Slay the Spire 2"
+    }
+  }
+}

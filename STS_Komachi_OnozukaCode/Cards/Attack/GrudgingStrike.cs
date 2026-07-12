@@ -73,5 +73,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         //    base.DynamicVars.Damage.UpgradeValueBy(2);
         //    DynamicVars[nameof(VengefulSpiritApplication)].UpgradeValueBy(1);
         //}
+
+
     }
 }

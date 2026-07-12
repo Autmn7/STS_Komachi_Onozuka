@@ -25,7 +25,7 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities
 { 
-    public class NoHardFeelingsPower : TemporaryStrengthPower
+    public class NoHardFeelingsPower : TemporaryStrengthPower, ICustomPower
     {
         public override AbstractModel OriginModel => ModelDb.Card<NoHardFeelings>();
         protected override bool IsPositive => false;

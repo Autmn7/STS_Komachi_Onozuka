@@ -17,7 +17,10 @@ using MegaCrit.Sts2.Core.Models.Badges;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extras;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.PowerPatches;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Patches.Previewers;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Abilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +29,7 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
 {
-    public class VengefulSpiritPower : STS_Komachi_OnozukaPower, IHasSecondAmount, IHasEmphasizedSecondAmount, IPreExtraHoverTips
+    public class VengefulSpiritPower : STS_Komachi_OnozukaPower, IHasSecondAmount, IHasEmphasizedSecondAmount, IPreExtraHoverTips, IHasAmbientDamagePreview
     {
         public override PowerType Type => PowerType.Debuff;
         public override PowerStackType StackType => PowerStackType.Counter;
@@ -38,58 +41,31 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
             new DamageVar(nameof(VengefulDamage), 2m, ValueProp.Move)
         ];
 
+
+        public Creature? DamageTarget => Owner; // explodes onto its own owner
         /// <summary>
         /// The base un-modified explosion damage (Amount * 2).
         /// </summary>
-        public decimal BaseVengefulDamage => Amount * 2m;
+        public decimal BaseDamage => Amount * 2m;
+        /// <summary>
+        /// Previews what the damage should be against the damage target.
+        /// </summary>
+        public decimal ModifiedDamage => SpiritDamageHelper.FindDamageDealt(Applier, DamageTarget, BaseDamage, DynamicVars[nameof(VengefulDamage)]);
 
         /// <summary>
-        /// Evaluates the fully modified game damage using the combat engine hooks.
+        /// Same as modified damage, but used to get the localization.
+        /// Returns the base damage though, since FindDamageDealt only updates the preview amount.
         /// </summary>
         public decimal VengefulDamage
         {
             get
             {
-                decimal baseDmg = Amount * 2m;
-                decimal modifiedDmg = baseDmg;
-
-                if (Owner != null && Applier?.CombatState != null && Applier?.Player?.RunState != null)
-                {
-                    modifiedDmg = Hook.ModifyDamage(
-                        Applier.Player.RunState,
-                        Applier.CombatState,
-                        Owner,
-                        Applier,
-                        baseDmg,
-                        ValueProp.Move,
-                        null,
-                        ModifyDamageHookType.All,
-                        CardPreviewMode.None,
-                        out _
-                    );
-                }
-
-                // Keep the underlying engine variable synced with calculations
-                var damageVar = DynamicVars[nameof(VengefulDamage)];
-                damageVar.BaseValue = baseDmg;
-                damageVar.PreviewValue = modifiedDmg;
-
-                return modifiedDmg;
+                SpiritDamageHelper.FindDamageDealt(Applier, DamageTarget, BaseDamage, DynamicVars[nameof(VengefulDamage)]);
+                return DynamicVars[nameof(VengefulDamage)].IntValue;
             }
         }
-
+        public decimal? GetAmbientPreviewDamage() => ModifiedDamage; // getter already recomputes via Hook.ModifyDamage
         public void PreExtraHoverTips() => _ = VengefulDamage;
-
-        // No longer needed due to p
-        //protected override IEnumerable<IHoverTip> ExtraHoverTips
-        //{
-        //    get
-        //    {
-        //        // Accessing the property automatically refreshes its values inside DynamicVars
-        //        _ = VengefulDamage;
-        //        return base.ExtraHoverTips;
-        //    }
-        //}
 
         public int Duration
         {
@@ -132,7 +108,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
         {
             if (_isExploding) return;
             _isExploding = true;
-            decimal damage = BaseVengefulDamage;
+            decimal damage = BaseDamage;
             var damageResults = await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), oldOwner, damage, ValueProp.Move, Applier, null);
             var dmgResult = damageResults.FirstOrDefault();
             if (currentDetonationArgs != null)

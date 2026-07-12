@@ -1,19 +1,103 @@
 Most art in this mod is from existing fan art of Komachi. This file contains the sources for all of them.
 
 Models:
+Select Screen background: https://www.pixiv.net/en/artworks/90384513
+Character select block: https://safebooru.org/index.php?page=post&s=view&id=3816649
 Combat model: Dairi
 Merchant model: https://x.com/hey36253625/status/1023102652274491397
+
+Cards:
+The following cards were custom made by Iced_lemon for the mod (and as far as I know he hasn't posted them anywhere else):
+- Lily's Embrace
+- Parasitic Pollen
+- Low Tier Shinigami
+The titanic relic was also made by him.
 
 Strike: https://www.pixiv.net/en/artworks/5761472
 Defend: https://www.pixiv.net/en/artworks/21177490
 Shoot and Move: https://www.pixiv.net/en/artworks/20288141
 Handy Retreat: https://www.pixiv.net/en/artworks/43957526
 Scythe of Final Judgement: https://www.pixiv.net/en/artworks/102460697
+Judgement of Virtue: https://www.pixiv.net/en/artworks/50257234
 Recursive Souls: https://www.pixiv.net/en/artworks/13758912
 Tip of the Reaper: https://safebooru.org/index.php?page=post&s=view&id=1172494
 Release Token: https://safebooru.org/index.php?page=post&s=view&id=1008276
+Lonesome Lily: https://www.pixiv.net/en/artworks/77694952
 Lycoris Radiata: https://danbooru.donmai.us/posts/4264129
+Spirit Invitation: https://safebooru.org/index.php?page=post&s=view&id=2745370
+Quintessence: https://safebooru.org/index.php?page=post&s=view&id=1444333
+Flower Viewing: https://safebooru.org/index.php?page=post&s=view&id=2053046
 
+Endless Way: https://www.pixiv.net/en/artworks/12977228
+Flow of the Sanzu River: https://www.pixiv.net/en/artworks/15759896
+Shinigami's Finesse: https://www.pixiv.net/en/artworks/18042750
+Riverside Garden: https://www.pixiv.net/en/artworks/13364566
+The strongest spirit: https://safebooru.org/index.php?page=post&s=view&id=192443 (Original source is dead)
+Guiding Sanzu: https://www.pixiv.net/en/artworks/29127901
+No Hard Feelings: https://x.com/WVTj73lGXvUJggy/status/1446479681482473473
+Sweeping Scythe: https://www.pixiv.net/en/artworks/32505176
+Shinigami's Divine Protection: https://www.pixiv.net/en/artworks/35136151
+Pushback Draw: https://safebooru.org/index.php?page=post&s=view&id=653958 (Original source is dead)
+Scythe Parry: https://www.pixiv.net/en/artworks/10138560
+Moving Defend: https://www.pixiv.net/en/artworks/25916285
+Ferriage of the deep fog: https://x.com/evermythic/status/1843430707965898943
+Grudging Strike: https://www.pixiv.net/en/artworks/68053532
+Afterlife Passage: https://www.pixiv.net/en/artworks/57353361
+Eye of the Storm: https://safebooru.org/index.php?page=post&s=view&id=20618 (Original source is dead)
+Ritual of Ecstasy: https://danbooru.donmai.us/posts/8529740
+Equalize Distance: https://www.pixiv.net/en/artworks/40762663
+Spirit Catalyst: https://safebooru.org/index.php?page=post&s=view&id=2122377
+Double Hooking: https://www.pixiv.net/en/artworks/77940125
+Spirits of a Past Life: https://www.pixiv.net/en/artworks/99298030
+Souls at the end of the road: https://www.pixiv.net/en/artworks/39094445
+Extinct Fauna: https://www.pixiv.net/en/artworks/79625124
+Ministry WorK: https://www.pixiv.net/en/artworks/7765481
+God of Death: https://danbooru.donmai.us/posts/1232189 (Original source is dead)
+Reaper's Due: https://www.pixiv.net/en/artworks/121937203
+Grudge of the dead: https://danbooru.donmai.us/posts/1392249 (Original source is dead. Held with grudged.)
+Talkative Ferryman: https://x.com/tatutaniyuuto/status/1381224833053155330
+Bound Spirits of the Earth: https://www.pixiv.net/en/artworks/56098385
+Spirit Return: https://x.com/Chenwei_21/status/1898642733503541666
+Hardworking Shinigami: https://x.com/mirandakeikoku/status/1244686342413381632
+Flexible Work Schedule: https://www.pixiv.net/en/artworks/28523496
+Forever Cancelled: https://www.pixiv.net/en/artworks/80719362
+Distance Tax: https://www.pixiv.net/en/artworks/57586700
+Residual Ether: https://danbooru.donmai.us/posts/1200507 (Original source is dead)
+Tour Guide to the Afterworld: https://www.pixiv.net/en/artworks/33098286
+Work Focus:https://www.pixiv.net/en/artworks/39059544
+Push and pull: https://www.pixiv.net/en/artworks/45135152
+Handy Retreat: https://www.pixiv.net/en/artworks/43957526
+Shinigami Tactics: https://www.pixiv.net/en/artworks/34604372
+Spirits of the Firm: https://www.pixiv.net/en/artworks/44315195
+Close Quarter Technique: https://www.pixiv.net/en/artworks/71376284
+Accompanying Spy Spirit: https://www.pixiv.net/en/artworks/84751080
+Siren's Bounty: https://www.pixiv.net/en/artworks/69260731
+Scythe of Roaming Spirits: https://safebooru.org/index.php?page=post&s=view&id=917982
+Slice of Higan: https://www.pixiv.net/en/artworks/1061459
+Scythe of Exorcism: https://danbooru.donmai.us/posts/1060110 (You know the drill at this point)
+Scythe of the Reaper: https://danbooru.donmai.us/posts/1234600
+Lifespan's end: https://www.pixiv.net/en/artworks/55038068
+Coin Throw: https://www.pixiv.net/en/artworks/51594370
+Hell's frozen warmth: https://www.pixiv.net/en/artworks/20039325
+Weed Cutter: https://x.com/makuwauri_uri/status/967440931619155968
+Spiritual Damage: https://safebooru.org/index.php?page=post&s=view&id=621713
+Human Spirits Passing By: https://safebooru.org/index.php?page=post&s=view&id=373753
+Chain Reaction: https://x.com/i/web/status/564423976282112000
+Abundant Floating Spirits: https://www.pixiv.net/en/artworks/22384729
+Move and shoot: https://www.pixiv.net/en/artworks/20288141
+Exchange of the living and the dead: https://www.pixiv.net/en/artworks/63475939
+Lonely Bound Spirit: https://www.pixiv.net/en/artworks/14269911
+Free Trauma: https://safebooru.org/index.php?page=post&s=view&id=293607
+Spirit Barrier: https://www.pixiv.net/en/artworks/23607525
+Protective Sanzu Boat: https://safebooru.org/index.php?page=post&s=view&id=787257
+Exchange Life: https://www.pixiv.net/en/artworks/116442814
+Taste of Death: https://safebooru.org/index.php?page=post&s=view&id=952065
+Gold Sarcophagus: https://x.com/i/web/status/474190711793782790
+Riverside View: https://www.pixiv.net/en/artworks/6602182
+Stygian Reel: https://x.com/o11_yori/status/1772070830421229976
+Storm of the Grieving Dead: https://www.pixiv.net/en/artworks/87263030
+Posessed Armament: https://safebooru.org/index.php?page=post&s=view&id=32733
+Oasis of Passing souls: https://safebooru.org/index.php?page=post&s=view&id=71165
+Short Life Expectancy: https://safebooru.org/index.php?page=post&s=view&id=809535
 
-
-Anything not sourced here was made by me.
+Anything not sourced here was made by me. If anything is missing please tell me.

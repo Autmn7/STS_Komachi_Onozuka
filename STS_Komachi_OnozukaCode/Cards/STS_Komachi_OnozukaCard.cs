@@ -2,6 +2,7 @@
 using BaseLib.Extensions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -12,7 +13,9 @@ using MegaCrit.Sts2.Core.Models;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Character;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Danmaku;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
+using System.Runtime.InteropServices.Marshalling;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
 {
@@ -177,18 +180,24 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         }
 
         /// <summary>
-        /// Override to report the set of Displacements this card can apply to its
-        /// target. Used for cards that displace before dealing damage.
-        /// Default null means this card doesn't displace its target, so no preview
-        /// or highlighting is computed for it.
+        /// Override to report the set of Displacements this card can apply to its target. 
+        /// Used for cards that displace before dealing damage.
+        /// Default null means this card doesn't displace its target, 
+        /// so no preview or highlighting is computed for it.
         /// </summary>
         public virtual int[]? GetPossibleDisplacements() => null;
 
         /// <summary>
         /// Override to replace DistancePower's standard damage multiplier for a specific
         /// absolute Distance level, when THIS card is the one dealing the hit.
+        /// Curently only used for scythe of final judgemento
         /// </summary>
         public virtual decimal? GetDistanceMultiplierOverride(int distanceLevel) => null;
+
+        /// <summary>
+        /// Danmaku Patterns that this card uses.
+        /// </summary>
+        public virtual List<DanmakuPiece> patterns => [];
         //Image size:
         //Normal art: 1000x760 (Using 500x380 should also work, it will simply be scaled.)
         //Full art: 606x852

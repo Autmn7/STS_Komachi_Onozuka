@@ -26,6 +26,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
             [
                 HoverTipFactory.FromCard<SpiderLily>(),
                 HoverTipFactory.FromCard<ManipulateDistanceToken>(),
+                HoverTipFactory.FromPower<GuidedSpiritPower>(),
+
             ];
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -35,22 +37,30 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Relics
 
         public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
         {
-            if (player != Owner || Owner.PlayerCombatState.TurnNumber != 1)
+            if (player != Owner)
                 return;
-            CardModel created = Owner.Creature.CombatState.CreateCard<ManipulateDistanceToken>(Owner);
-            await CardPileCmd.Add(created, PileType.Hand);
-
-            await PowerCmd.Apply<GuidedSpiritPower>(choiceContext,
-                Owner.Creature, DynamicVars["Value1"].BaseValue, Owner.Creature, null);
+            if (player.PlayerCombatState?.TurnNumber == 1)
+            {
+                CardModel created = combatState.CreateCard<ManipulateDistanceToken>(Owner);
+                await CardPileCmd.Add(created, PileType.Hand);
+                await PowerCmd.Apply<GuidedSpiritPower>(choiceContext,
+                    Owner.Creature, DynamicVars["Value1"].BaseValue, Owner.Creature, null);
+            }
+            else if (player.PlayerCombatState?.TurnNumber == 3)
+            {
+                Flash();
+                CardModel created = combatState.CreateCard<SpiderLily>(Owner);
+                await CardPileCmd.Add(created, PileType.Hand);
+            }
         }
 
+        /// <summary>
+        /// Gain Gold on kill
+        /// </summary>
         public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
         {
             if (creature.Side != base.Owner.Creature.Side)
             {
-                Flash();
-                CardModel created = Owner.Creature.CombatState.CreateCard<SpiderLily>(Owner);
-                await CardPileCmd.Add(created, PileType.Hand);
                 if (!creature.IsSecondaryEnemy)
                 {
                     await PlayerCmd.GainGold(DynamicVars.Gold.BaseValue, Owner);

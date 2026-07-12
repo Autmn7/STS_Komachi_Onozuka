@@ -28,10 +28,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
     public class LonesomeLily : STS_Komachi_OnozukaCard
     {
         public LonesomeLily()
-            : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+            : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
         {
             WithTip(typeof(SpiderLily));
-            // Maybe replace it with another custom card later
             WithTip(typeof(LycorisRadiata));
             // Spider Lilies Added
             WithVar(nameof(Value1), 1, 1);

@@ -35,10 +35,15 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands
             EnemyIntentDistancePreviewController.OnDistanceChanged(args.Target);
             return dis;
         }
-        public static Task OnReleasing(PlayerChoiceContext choiceContext, ReleaseResult args)
+        public static Task OnReleasing(PlayerChoiceContext choiceContext, ReleaseArgs args)
         {
             return Dispatch(choiceContext, args.creature.CombatState,
                 (IOnReleasingListener m) => m.OnReleasing(choiceContext, args));
+        }
+        public static Task OnReleased(PlayerChoiceContext choiceContext, ReleaseArgs args)
+        {
+            return Dispatch(choiceContext, args.creature.CombatState,
+                (IOnReleasedListener m) => m.OnReleased(choiceContext, args));
         }
         public static Task OnDetonating(PlayerChoiceContext choiceContext, DetonationEventArgs args)
         {

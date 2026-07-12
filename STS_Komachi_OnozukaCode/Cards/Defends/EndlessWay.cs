@@ -55,7 +55,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
                 await ReleaseCmd.Release(choiceContext, Owner.Creature, cost, this);
 
                 await PowerCmd.Apply<TaintedPower>(choiceContext, cardPlay.Target, 
-                    cost / ReleaseCost, Owner.Creature, this);
+                    Value2 * (cost / ReleaseCost), Owner.Creature, this);
             }
         }
     }

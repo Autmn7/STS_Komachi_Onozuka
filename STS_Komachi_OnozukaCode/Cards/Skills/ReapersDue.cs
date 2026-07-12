@@ -30,10 +30,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         protected override bool HasEnergyCostX => true;
         public ReapersDue() : base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
         {
-            // Over 3 turns: 6 damage at 1. 15 Damage at 2. 24 at 3.
-            WithPower<GuidedSpiritPower>(nameof(Value1), 3, 1);
-            // Over 3 turns: 10 AOE Damage
-            WithPower<VengefulSpiritPower>(nameof(Value2), 5, 1);
+            // Over 3 turns if 3: 6 damage at 1. 15 Damage at 2. 24 at 3.
+            // Over 3 turns if 4: 9 damage at 1. 21 damage at 2, 33 at 3.
+            WithPower<GuidedSpiritPower>(nameof(Value1), 4, 1);
+            // Over 3 turns: 8 AOE Damage
+            WithPower<VengefulSpiritPower>(nameof(Value2), 4, 1);
             // Over 3 turns: 14 Block.
             WithPower<DivineSpiritPower>(nameof(Value3), 8, 2);
             // At 2, deals 15 damage+10 Aoe (25 total)

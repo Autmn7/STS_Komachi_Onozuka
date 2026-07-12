@@ -6,10 +6,25 @@
         <Nullable>enable</Nullable> <!--Makes code analysis regarding null values stricter.-->
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
+
+		<DefaultItemExcludes>packages/**</DefaultItemExcludes>
         <AppOutputBase>$(MSBuildProjectDirectory)\</AppOutputBase>
-        <PathMap>$(AppOutputBase)=.\</PathMap>
+		<!--PathMap>$(AppOutputBase)=.\</PathMap-->
+		<!-- only on release -->
+		<RootNamespace>STS_Komachi_Onozuka</RootNamespace>
         <GodotDisabledSourceGenerators>GodotPluginsInitializer</GodotDisabledSourceGenerators>
     </PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<Optimize>false</Optimize>
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<Optimize>true</Optimize>
+		<DebugType>none</DebugType>
+		<PathMap>$(AppOutputBase)=.\</PathMap>
+	</PropertyGroup>
 
     <PropertyGroup>
         <!-- Diasble architecture mismatch warning; mods are ideally built for all platforms (MSIL)
@@ -57,19 +72,12 @@
         <None Include=".gitignore" />
         <None Include="STS_Komachi_Onozuka.json" />
         <None Include="project.godot" />
-        <None Include="STS_Komachi_Onozuka/**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <AdditionalFiles Remove="sts_komachi_onozuka\localization\eng\card_modifiers.json" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Content Include="STS_Komachi_Onozuka\images\card_portraits\big\defend_komachi.png" />
+		<None Include="STS_Komachi_Onozuka/**" Exclude="STS_Komachi_Onozuka/localization/**" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Properties\" />
+      <Folder Include="STS_Komachi_Onozuka\images\potions\" />
     </ItemGroup>
     
     <Target Name="CheckDependencyPaths">
@@ -98,7 +106,8 @@
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
         <Copy SourceFiles="$(AssemblyName).json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
         <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
-    </Target>
+		<Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+	</Target>
 
     <Target Name="CopyQuickPck" AfterTargets="PackPck" Condition="Exists('$(PckPackerOutputPath)') And '$(PckPackerSkipped)' != 'true'">
         <Message Text="Copying quick .pck to mods folder." Importance="high" />

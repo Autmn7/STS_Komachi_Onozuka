@@ -38,6 +38,17 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode
             {
                 MainFile.LogMessage($"[PatchCheck] EXCEPTION: {ex}");
             }
+            try
+            {
+                // For some reason this patch in specific does not patch unless i do this.
+                var patched = harmony.CreateClassProcessor(typeof(NPower_ThirdAmount_Patch)).Patch();
+                foreach (var m in patched)
+                    MainFile.LogMessage($"[PatchCheck] Actually patched: {m.DeclaringType}.{m.Name}");
+            }
+            catch (Exception ex)
+            {
+                MainFile.LogMessage($"[PatchCheck] EXCEPTION: {ex}");
+            }
         }
 
         public static void LogMessage(string message)

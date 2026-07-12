@@ -77,6 +77,17 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions
             return Path.Join(MainFile.ResPath, "images", "relics", "big", "relic.png");
         }
 
+
+
+        public static string PotionImagePath(this string path)
+        {
+            path = Path.Join(MainFile.ResPath, "images", "potions", path);
+            if (ResourceLoader.Exists(path)) return path;
+
+            MainFile.Logger.Info("Could not find card image path: " + path);
+            return Path.Join(MainFile.ResPath, "images", "potions", "potion.png");
+        }
+
         public static string CharacterUiPath(this string path)
         {
             return Path.Join(MainFile.ResPath, "images", "charui", path);
