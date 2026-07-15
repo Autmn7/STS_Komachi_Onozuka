@@ -14,6 +14,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Minions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Other;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
 using System;
@@ -32,6 +33,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             // Summon amount
             WithVar(nameof(Value1), 25, 10);
+            WithKeyword(KomachiKeywords.Barrier);
             // Strength amount
             WithPower<StrengthPower>(nameof(Value2), 2, 1);
             WithHeal(5, 5);
@@ -44,7 +46,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             if (CombatState == null) return;
 
             await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
-            await OstyCmd.Summon(choiceContext, Owner, Value1, this);
+            await DivineSpiritCmd.Summon(choiceContext, Owner, Value1, this);
             await CreatureCmd.Heal(base.Owner.Creature, base.DynamicVars.Heal.BaseValue);
             await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner.Creature, Value2, base.Owner.Creature, this);
             await PowerCmd.Apply<EthicallySourcedBreakPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);

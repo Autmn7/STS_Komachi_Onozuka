@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             WithEnergy(1);
             WithPower<GuidedSpiritPower>(nameof(Value1), 2, 1);
             WithPower<DivineSpiritPower>(nameof(Value2), 2, 1);
+            WithKeyword(KomachiKeywords.Barrier);
             WithKeyword(CardKeyword.Exhaust);
         }
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

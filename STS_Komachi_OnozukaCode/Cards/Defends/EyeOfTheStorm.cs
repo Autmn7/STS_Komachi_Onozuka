@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Minions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
     {
         public EyeOfTheStorm() : base(3, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
         {
-            WithTip(StaticHoverTip.SummonStatic);
             WithBlock(14, 2);
             WithKeyword(KomachiKeywords.Release);
+            WithKeyword(KomachiKeywords.Barrier);
             // Also the release cost
             WithPower<GuidedSpiritPower>(nameof(Value1), 6, 2);
             WithPower<VengefulSpiritPower>(nameof(Value2), 4, 2);
@@ -54,7 +55,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             {
                 await ReleaseCmd.Release(choiceContext, Owner.Creature, ReleaseCost, this);
 
-                await OstyCmd.Summon(choiceContext, Owner, DynamicVars.Summon.BaseValue, this);
+                await DivineSpiritCmd.Summon(choiceContext, Owner, DynamicVars.Summon.IntValue, this);
             }
         }
         

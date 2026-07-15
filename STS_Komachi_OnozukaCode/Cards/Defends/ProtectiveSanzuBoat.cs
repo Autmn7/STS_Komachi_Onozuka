@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Tokens;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Minions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Distance;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
 using System;
@@ -32,7 +33,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             // Summon per distance level
             WithVar(nameof(Value2), 1, 1);
             WithKeyword(KomachiKeywords.Displace);
-            WithTip(StaticHoverTip.SummonStatic);
+            WithKeyword(KomachiKeywords.Barrier);
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -44,7 +45,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
 
             var enemyDisplacement = DistancePower.GetLevel(cardPlay.Target);
-            await OstyCmd.Summon(choiceContext, Owner, enemyDisplacement * Value2, this);
+            await DivineSpiritCmd.Summon(choiceContext, Owner, enemyDisplacement * Value2, this);
         }
     }
 }

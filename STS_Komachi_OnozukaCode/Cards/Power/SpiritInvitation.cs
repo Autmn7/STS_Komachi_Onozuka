@@ -29,8 +29,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             WithPower<GuidedSpiritPower>(nameof(Value1), 3, 1);
             WithPower<DivineSpiritPower>(nameof(Value2), 3, 1);
-            WithTip(StaticHoverTip.SummonStatic);
             WithKeyword(KomachiKeywords.Release);
+            WithKeyword(KomachiKeywords.Barrier);
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

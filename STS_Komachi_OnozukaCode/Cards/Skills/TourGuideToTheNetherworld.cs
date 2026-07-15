@@ -33,6 +33,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
             WithPower<VengefulSpiritPower>(nameof(Value1), 2);
             WithPower<GuidedSpiritPower>(nameof(Value2), 2);
             WithPower<DivineSpiritPower>(nameof(Value3), 2);
+            WithKeyword(KomachiKeywords.Barrier);
         }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

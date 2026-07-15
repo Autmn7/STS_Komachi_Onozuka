@@ -4,6 +4,10 @@
   "STS_KOMACHI_ONOZUKA-RELEASE.description": "You MAY spend X total [gold]Guided[/gold] and/or [gold]Divine Spirits[/gold] (that you've had before this card is played) to activate this effect. [gold]Guided Spirits[/gold] are removed first.",
   "STS_KOMACHI_ONOZUKA-RELEASE.title": "Release X",
 
+  
+  "STS_KOMACHI_ONOZUKA-BARRIER.description": "Summon a Divine Spirit with X HP. If already summoned, raise its HP by X for this combat.",
+  "STS_KOMACHI_ONOZUKA-BARRIER.title": "Barrier X",
+
   "STS_KOMACHI_ONOZUKA-DISPLACE.description": "Change the enemy's [gold]Distance[/gold]. Any instance of changing [gold]Distance[/gold] is [gold]Displacement[/gold].",
   "STS_KOMACHI_ONOZUKA-DISPLACE.title": "Displace",
 

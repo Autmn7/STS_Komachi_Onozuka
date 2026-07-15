@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Commands;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Minions;
 using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits;
 using System;
 using System.Collections.Generic;
@@ -24,12 +25,11 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             WithBlock(9, 3);
             WithKeyword(KomachiKeywords.Release);
-            WithTip(StaticHoverTip.SummonStatic);
+            WithKeyword(KomachiKeywords.Barrier);
 
             // Player must have at least 1 spirit
             WithVar(nameof(ReleaseCost), 1);
         }
-
         public override bool GainsBlock => true;
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
@@ -47,14 +47,8 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             {
                 await ReleaseCmd.Release(choiceContext, Owner.Creature, total, this);
 
-                await OstyCmd.Summon(choiceContext, Owner, total, this);
+                await DivineSpiritCmd.Summon(choiceContext, Owner, total, this);
             }
         }
-
-        //protected override void OnUpgrade()
-        //{
-        //    base.DynamicVars.Block.UpgradeValueBy(2m);
-        //    DynamicVars[nameof(GuidedApplication)].UpgradeValueBy(2);
-        //}
     }
 }

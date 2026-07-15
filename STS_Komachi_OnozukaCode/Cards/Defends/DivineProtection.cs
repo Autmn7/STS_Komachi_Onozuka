@@ -28,7 +28,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             WithVar(nameof(ReleaseCost), 4);
             WithKeyword(KomachiKeywords.Release);
             WithKeyword(CardKeyword.Exhaust);
-            WithTip(StaticHoverTip.SummonStatic);
+            WithKeyword(KomachiKeywords.Barrier);
         }
 
         public override bool GainsBlock => true;

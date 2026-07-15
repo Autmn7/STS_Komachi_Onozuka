@@ -26,9 +26,9 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         {
             WithDamage(13, 3);
             WithKeyword(KomachiKeywords.Displace);
+            WithKeyword(KomachiKeywords.Barrier);
             WithKeyword(CardKeyword.Exhaust);
             WithTip(typeof(DistancePower));
-            WithTip(StaticHoverTip.SummonStatic);
             // Summon from displacement
             WithVar(nameof(Value1), 1, 1);
         }

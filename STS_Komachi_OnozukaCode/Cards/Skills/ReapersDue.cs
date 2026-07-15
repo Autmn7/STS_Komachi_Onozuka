@@ -37,6 +37,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             WithPower<VengefulSpiritPower>(nameof(Value2), 4, 1);
             // Over 3 turns: 14 Block.
             WithPower<DivineSpiritPower>(nameof(Value3), 8, 2);
+            WithKeyword(KomachiKeywords.Barrier);
             // At 2, deals 15 damage+10 Aoe (25 total)
             // At 3, deals 24 damage+10 aoe + 14 block.
 

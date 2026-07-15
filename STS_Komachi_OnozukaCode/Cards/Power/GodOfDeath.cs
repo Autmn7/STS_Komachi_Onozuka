@@ -34,7 +34,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
         {
             WithTip(typeof(IntangiblePower));
             WithTip(typeof(DistancePower));
-            WithTip(StaticHoverTip.SummonStatic);
+            WithKeyword(KomachiKeywords.Barrier);
             WithHeal(9, 3);
         }
 

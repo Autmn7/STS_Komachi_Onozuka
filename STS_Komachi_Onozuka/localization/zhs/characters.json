@@ -1,0 +1,20 @@
+﻿{
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.aromaPrinciple": "[red]那些灵魂……也该好好休息一下了。[/red]",
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.banter.alive.endTurnPing": "你们弄完了，记得叫醒我打盹。",
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.banter.dead.endTurnPing": "Zzzz……",
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.cardsModifierDescription": "摆渡人的卡牌现在会出现在奖励和商店中。",
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.cardsModifierTitle": "摆渡人卡牌",
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.description": "三途川的死神引导员。\n不偷懒的时候会操控距离与灵体。",
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.eventDeathPrevention": "我可是死神，怎么可能会死！",
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.goldMonologue": "[sine]这些够我做不少弹幕了！[/sine]",
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.possessiveAdjective": "她的",
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.pronounObject": "她",
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.pronounPossessive": "她的",
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.pronounSubject": "她",
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.title": "摆渡人",
+  "STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.titleObject": "摆渡人",
+  "THE_ARCHITECT.talk.STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.0-0r.char": "I am angry at the architect",
+  "THE_ARCHITECT.talk.STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.0-0r.next": "Continue",
+  "THE_ARCHITECT.talk.STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.0-1r.ancient": "You die",
+  "THE_ARCHITECT.talk.STS_KOMACHI_ONOZUKA-S_T_S_KOMACHI_ONOZUKA.0-attack": "Both"
+}

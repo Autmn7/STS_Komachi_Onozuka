@@ -21,7 +21,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode
         public static void Initialize()
         {
             //If you want to use scripts defined in your mod for Godot scenes, uncomment the following line.
-            //Godot.Bridge.ScriptManagerBridge.LookupScriptsInAssembly(Assembly.GetExecutingAssembly());
+            Godot.Bridge.ScriptManagerBridge.LookupScriptsInAssembly(Assembly.GetExecutingAssembly());
 
             Harmony harmony = new(ModId);
             // Harmony.DEBUG = true;

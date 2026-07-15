@@ -30,7 +30,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards.Attack
         public ScytheOfFinalJudgement()
         : base(1, CardType.Attack, CardRarity.Ancient, TargetType.AnyEnemy)
         {
-            WithDamage(15, 10);
+            WithDamage(15, 5);
             WithPower<DistancePower>(nameof(Value1), 1, 1);
             WithKeyword(KomachiKeywords.Displace);
             WithTip(typeof(DistancePower));

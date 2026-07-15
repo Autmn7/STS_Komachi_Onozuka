@@ -55,6 +55,10 @@
         <!-- <PackageReference Include="BSchneppe.StS2.PckPacker" Version="0.1.1" PrivateAssets="All" /> -->
         <AdditionalFiles Include="STS_Komachi_Onozuka/localization/**/*.json" /> <!-- Used by analyzer -->
     </ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="FuYnAloft.Sts2.MinionLib" Version="0.5.2" />
+	</ItemGroup>
 
     <ItemGroup>
         <Compile Remove="STS_Komachi_Onozuka/**" />

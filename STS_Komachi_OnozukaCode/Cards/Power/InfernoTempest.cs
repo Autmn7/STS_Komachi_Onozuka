@@ -31,6 +31,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             WithPower<GuidedSpiritPower>(nameof(Value1), 1, 1);
             WithTip(typeof(VengefulSpiritPower));
             WithPower<DivineSpiritPower>(nameof(Value3), 2, 1);
+            WithKeyword(KomachiKeywords.Barrier);
             // Cards to be returned
             WithVar(nameof(Value2), 4, 2);
         }

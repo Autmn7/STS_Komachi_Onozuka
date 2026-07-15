@@ -13,16 +13,17 @@
   "STS_KOMACHI_ONOZUKA-HARDWORKING_SHINIGAMI_POWER.description": "At the start of your turn, if you have no [gold]Manipulate Distance[/gold] in [gold]Hand[/gold], add 1 into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-HARDWORKING_SHINIGAMI_POWER.smartDescription": "At the start of your turn, if there {Amount:plural:is no|are less than [blue]{Amount}[/blue]} [gold]Manipulate Distances[/gold] in [gold]Hand[/gold], add {Amount:plural:a [gold]Manipulate Distance[/gold]|[gold]Manipulate Distances[/gold]} into your [gold]Hand[/gold]{Amount:plural:.| until there are [blue]{Amount}[/blue].}",
 
-  "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER_POWER.smartDescription": "Whenever an enemy is [gold]Displaced[/gold]:\nIf the [gold]Distance[/gold] increased, gain {Amount} [gold]Dexterity[/gold] this turn.\nIf the [gold]Distance[/gold] decreased, gain {Amount} [gold]Strength[/gold] this turn.",
-  "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER_POWER.title": "Flow Of The Sanzu River",
-
   "STS_KOMACHI_ONOZUKA-PUSH_N_PULL_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-PUSH_N_PULL_POWER.smartDescription": "At the start of {OwnerName}'s turn, [gold]Displace[/gold] all enemies by [blue]-{Amount}[/blue].\nAt the end of {OwnerName}'s turn, [gold]Displace[/gold] all enemies by [blue]+{Amount}[/blue].",
   "STS_KOMACHI_ONOZUKA-PUSH_N_PULL_POWER.title": "Push and Pull",
 
+  "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER_POWER.description": "",
+  "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER_POWER.smartDescription": "Whenever an enemy is [gold]Displaced[/gold]:\nIf the [gold]Distance[/gold] increased, gain {Amount} [gold]Dexterity[/gold] this turn.\nIf the [gold]Distance[/gold] decreased, gain {Amount} [gold]Strength[/gold] this turn.",
+  "STS_KOMACHI_ONOZUKA-FLOW_OF_THE_SANZU_RIVER_POWER.title": "Flow Of The Sanzu River",
+
+
   "STS_KOMACHI_ONOZUKA-GOD_OF_DEATH_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-GOD_OF_DEATH_POWER.smartDescription": "Whenever an enemy dies, if it was a [gold]Minion[/gold], [gold]Summon[/gold] [blue]{Amount}[/blue]. Otherwise, Heal [blue]{Amount}[/blue] HP.\n{HasRevived:choose(0):The next time {OwnerName}'s HP would be reduced to 0, instead, heal to 50% of Max HP, gain 1 [gold]Intangible[/gold], then remove the first played [gold]God of Death[/gold] from your [gold]Deck[/gold].|{OwnerName} has already been revived by this effect.}",
+  "STS_KOMACHI_ONOZUKA-GOD_OF_DEATH_POWER.smartDescription": "Whenever an enemy dies, if it was a [gold]Minion[/gold], [gold]Barrier[/gold] [blue]{Amount}[/blue]. Otherwise, Heal [blue]{Amount}[/blue] HP.\n{HasRevived:choose(0):The next time {OwnerName}'s HP would be reduced to 0, instead, heal to 50% of Max HP, gain 1 [gold]Intangible[/gold], then remove the first played [gold]God of Death[/gold] from your [gold]Deck[/gold].|{OwnerName} has already been revived by this effect.}",
   "STS_KOMACHI_ONOZUKA-GOD_OF_DEATH_POWER.title": "God Of Death",
 
   "STS_KOMACHI_ONOZUKA-RIVERSIDE_GARDEN_POWER.description": "",
@@ -35,7 +36,7 @@
 
 
   "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.smartDescription": "Whenever {OwnerName} is [gold]Displaced[/gold], Player {ApplierName} [gold]Summons[/gold] [blue]{Amount}[/blue].",
+  "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.smartDescription": "Whenever {OwnerName} is [gold]Displaced[/gold], Player {ApplierName} [gold]Barriers[/gold] [blue]{Amount}[/blue].",
   "STS_KOMACHI_ONOZUKA-ACCOMPANYING_SPY_SPIRIT_POWER.title": "Accompanying Spy Spirit",
 
 
@@ -48,9 +49,14 @@
   "STS_KOMACHI_ONOZUKA-GUIDED_SPIRIT_POWER.title": "Guided Spirits",
 
 
-  "STS_KOMACHI_ONOZUKA-DIVINE_SPIRIT_POWER.description": "At the end of your turn, [gold]Summon[/gold] equal to [gold]Divine Spirits[/gold], then halve it (rounding down).",
-  "STS_KOMACHI_ONOZUKA-DIVINE_SPIRIT_POWER.smartDescription": "At the end of {OwnerName}'s turn, [gold]Summon[/gold] [blue]{Amount}[/blue], then halve this (rounding down).",
+  "STS_KOMACHI_ONOZUKA-DIVINE_SPIRIT_POWER.description": "At the end of your turn, [gold]Barrier[/gold] equal to [gold]Divine Spirits[/gold], then halve it (rounding down).",
+  "STS_KOMACHI_ONOZUKA-DIVINE_SPIRIT_POWER.smartDescription": "At the end of {OwnerName}'s turn, [gold]Barrier[/gold] [blue]{Amount}[/blue], then halve this (rounding down).",
   "STS_KOMACHI_ONOZUKA-DIVINE_SPIRIT_POWER.title": "Divine Spirit",
+
+  
+  "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER_POWER.description": "The [gold]Spirit[/gold] absorbs all unblocked attack damage.",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER_POWER.smartDescription": "The [gold]Spirit[/gold] absorbs all unblocked attack damage.",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_BARRIER_POWER.title": "Spirit Barrier",
 
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.description": "[font_size=18]Whenever [gold]Vengeful Spirits[/gold] are applied, [gold]Lonely Bound Spirit[/gold]'s amount will increase by the same amount.\nCan only be [gold]Detonated[/gold] by a card, dealing attack damage (affected by modifiers) equal to double its amount from the applying player to the target.\nWhen detonated at the same time as [gold]Vengeful Spirits[/gold], effects that count the amount of [gold]Spirits Detonated[/gold] will count both [gold]Detonations[/gold].",
   "STS_KOMACHI_ONOZUKA-LONELY_BOUND_SPIRIT_POWER.smartDescription": "Whenever [gold]Vengeful Spirits[/gold] are applied, [gold]Lonely Bound Spirit[/gold]'s amount will increase by the same amount.\nDeals attack damage equal to double its amount.\nWhen [gold]Detonated[/gold], Player {ApplierName} will attack {OwnerName} for [blue]{VengefulDamage}[/blue] damage.",
@@ -72,8 +78,9 @@
   "STS_KOMACHI_ONOZUKA-GRUDGE_OF_THE_DEAD_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-GRUDGE_OF_THE_DEAD_POWER.smartDescription": "Each time [gold]Spirits[/gold] are [gold]Detonated[/gold], gain [blue]{Amount}[/blue] [gold]Strength[/gold].",
   "STS_KOMACHI_ONOZUKA-GRUDGE_OF_THE_DEAD_POWER.title": "Grudge Of The Dead",
+
   "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH_POWER.smartDescription": "At the end of {OwnerName}'s turn, apply [blue]{Amount}[/blue] [gold]Vengeful Spirits[/gold] on each enemy with [gold]Vengeful Spirits[/gold].",
+  "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH_POWER.smartDescription": "At the end of {OwnerName}'s turn, apply [blue]{Amount}[/blue] [gold]Vengeful Spirits[/gold] to ALL enemies with [gold]Vengeful Spirits[/gold].",
   "STS_KOMACHI_ONOZUKA-BOUND_SPIRITS_OF_EARTH_POWER.title": "Bound Spirits Of The Earth",
 
 
@@ -94,8 +101,15 @@
 
 
   "STS_KOMACHI_ONOZUKA-LONESOME_LILY_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-LONESOME_LILY_POWER.smartDescription": "Whenever you play a [gold]Spider Lily[/gold], add [blue]{Amount}[/blue] [gold]Maul{Amount:plural:|s}[/gold] into your [gold]Hand[/gold].",
+  "STS_KOMACHI_ONOZUKA-LONESOME_LILY_POWER.smartDescription": "Whenever you play a [gold]Spider Lily[/gold], add [blue]{Amount}[/blue] [gold]Lycoris Radiata{Amount:plural:|s}[/gold] into your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-LONESOME_LILY_POWER.title": "Lonesome Lily",
+  "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.description": "Increases damage and poison application of your Lycoris Radiata.",
+  "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.smartDescription": "Your [gold]Lycoris Radiata[/gold] deals [blue]{Amount}[/blue] more damage and applies [green]{PoisonAmount}[/green] more [gold]Poison[/gold].",
+  "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.title": "Lycoris Radiata",
+  
+  "STS_KOMACHI_ONOZUKA-LILY_EMBRACE_POWER.description": "",
+  "STS_KOMACHI_ONOZUKA-LILY_EMBRACE_POWER.smartDescription": "Whenever you play a [gold]Spider Lily[/gold], gain [blue]{Amount}[/blue] [gold]Strength[/gold] and apply [green]{PoisonAmount}[/green] [gold]Poison[/gold] to ALL enemies.",
+  "STS_KOMACHI_ONOZUKA-LILY_EMBRACE_POWER.title": "Lily's Embrace",
 
 
   "STS_KOMACHI_ONOZUKA-GOLD_SARCOPHAGALLEY_POWER.description": "",
@@ -139,22 +153,16 @@
   "STS_KOMACHI_ONOZUKA-EIKI_FREE_RELEASE_POWER.title": "Lectured Shinigami",
 
   
-  "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.description": "Increases damage and poison application of your Lycoris Radiata.",
-  "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.smartDescription": "Your [gold]Lycoris Radiata[/gold] deals [blue]{Amount}[/blue] more damage and applies [green]{PoisonAmount}[/green] more [gold]Poison[/gold].",
-  "STS_KOMACHI_ONOZUKA-LYCORIS_RADIATA_POWER.title": "Lycoris Radiata",
 
   
   "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION_POWER.smartDescription": "Whenever you would [gold]Release[/gold]:\n- Deal {Amount} damage to ALL enemies for every [gold]Guided Spirit[/gold] you would [gold]Release[/gold].\n- [gold]Summon[/gold] and gain {Amount} [gold]Block[/gold] for every [gold]Divine Spirit[/gold] you would [gold]Release[/gold].",
+  "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION_POWER.smartDescription": "Whenever you would [gold]Release[/gold]:\n- Deal {Amount} damage to ALL enemies for every [gold]Guided Spirit[/gold] you would [gold]Release[/gold].\n- [gold]Barrier[/gold] and gain {Amount} [gold]Block[/gold] for every [gold]Divine Spirit[/gold] you would [gold]Release[/gold].",
   "STS_KOMACHI_ONOZUKA-SPIRIT_INVITATION_POWER.title": "Spirit Invitation",
   
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING_POWER.smartDescription": "At the start of your turn, add a [gold]Spider Lily[/gold] to your [gold]Hand[/gold].",
   "STS_KOMACHI_ONOZUKA-FLOWER_VIEWING_POWER.title": "Flower Viewing",
   
-  "STS_KOMACHI_ONOZUKA-LILY_EMBRACE_POWER.description": "",
-  "STS_KOMACHI_ONOZUKA-LILY_EMBRACE_POWER.smartDescription": "Whenever you play a [gold]Spider Lily[/gold], gain [blue]{Amount}[/blue] [gold]Strength[/gold] and apply [green]{PoisonAmount}[/green] [gold]Poison[/gold] to ALL enemies.",
-  "STS_KOMACHI_ONOZUKA-LILY_EMBRACE_POWER.title": "Lily's Embrace",
 
   "STS_KOMACHI_ONOZUKA-SPIRIT_RETURN_POWER.description": "",
   "STS_KOMACHI_ONOZUKA-SPIRIT_RETURN_POWER.smartDescription": "At the start of your turn, add up to [blue]{Amount}[/blue] card{Amount:plural:|s} from the [gold]Exhaust[/gold] pile with an energy cost of [blue]1[/blue] or less to your [gold]Hand[/gold]. It is removed from combat when played.",

@@ -3,12 +3,13 @@
   "name": "Komachi Onozuka",
   "author": "Valon",
   "description": "Adds Komachi Onozuka, the Grim Reaper and Sanzu River Guide from Touhou, to STS 2.",
-  "version": "v0.0.1",
+  "version": "v0.1.0",
   "min_game_version": "0.107.0",
   "has_pck": true,
   "has_dll": true,
   "dependencies": [
-    {"id": "BaseLib", "min_version": "3.3.5"}
+    {"id": "BaseLib", "min_version": "3.3.5"},
+    {"id": "MinionLib", "min_version": "0.5.2"}
   ],
   "affects_gameplay": true
 }

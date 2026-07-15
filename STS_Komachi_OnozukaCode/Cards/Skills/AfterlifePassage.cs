@@ -32,6 +32,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Cards
             WithKeyword(CardKeyword.Exhaust);
             WithPower<GuidedSpiritPower>(nameof(Value1), 4);
             WithPower<DivineSpiritPower>(nameof(Value2), 4);
+            WithKeyword(KomachiKeywords.Barrier);
             // Cards to exhaust
             WithVar(nameof(Value3), 2);
         }

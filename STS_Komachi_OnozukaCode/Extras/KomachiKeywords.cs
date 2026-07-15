@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions
 {
-    public class KomachiKeywords
+public class KomachiKeywords
     {
         [CustomEnum(null)]
         [KeywordProperties(0)]
@@ -21,6 +21,10 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions
         [CustomEnum(null)]
         [KeywordProperties(0)]
         public static CardKeyword Release;
+
+        [CustomEnum(null)]
+        [KeywordProperties(0)]
+        public static CardKeyword Barrier;
 
         [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
         public static CardKeyword Replenish;

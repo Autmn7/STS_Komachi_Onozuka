@@ -9,8 +9,11 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Extensions;
+using STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Minions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +27,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
     {
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(StaticHoverTip.SummonStatic)];
+        protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromKeyword(KomachiKeywords.Barrier)];
         public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             if (!participants.Contains(Owner))
@@ -32,7 +35,7 @@ namespace STS_Komachi_Onozuka.STS_Komachi_OnozukaCode.Powers.Spirits
                 return;
             }
 
-            await OstyCmd.Summon(choiceContext, Owner.Player, Amount, this);
+            await DivineSpiritCmd.Summon(choiceContext, Owner.Player, Amount, this);
 
             Amount = (int)Math.Floor(Amount / 2m);
 
